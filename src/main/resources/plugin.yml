@@ -15,14 +15,14 @@ permissions:
             heartchanger.dark: true
             heartchanger.poisoned: true
     heartchanger.normal:
-        description: Umozliwia graczowi zmiane serc na normalne
+        description: Allows the player to change hearts to normal
         default: true
     heartchanger.hardcore:
-        description: Umozliwia graczowi zmiane serc na te z trybu hardcore
+        description: Allows the player to change hearts to hardcore ones 
     heartchanger.golden:
-        description: Umozliwia graczowi zmiane serc na zlote
+        description: Allows the player to change hearts to golden ones 
     heartchanger.dark:
-        description: Umozliwia graczowi zmiane serc na ciemne
+        description: Allows the player to change hearts to dark ones 
     heartchanger.poisoned:
-        description: Umozliwia graczowi zmiane serc na zatrute
+        description: Allows the player to change hearts to poisoned ones
         
