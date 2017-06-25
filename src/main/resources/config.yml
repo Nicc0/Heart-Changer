@@ -1,0 +1,19 @@
+# List of Hearts Type
+#   0 = Normal
+#   1 = Hardcore
+#   2 = Dark
+#   3 = Golden
+#   4 = Poisoned
+Type: 1
+# 
+DeathScreen: false
+# 
+DisplayMessage: true
+# 
+AutoMessage: true
+# 
+Messages:
+    # 
+    YouDied: You Died
+    # 
+    Score: Score %score%
