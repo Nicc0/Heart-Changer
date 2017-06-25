@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.nicc0.heartchanger</groupId>
     <artifactId>HeartChanger</artifactId>
-    <version>1.0.0-1.10-SNAPSHOT</version>
+    <version>1.0.1-1.10-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>HeartChanger</name>
     <url>https://nicc0.pl/</url>
