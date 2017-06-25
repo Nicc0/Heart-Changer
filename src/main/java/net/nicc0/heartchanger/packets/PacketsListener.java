@@ -5,7 +5,9 @@ import com.comphenix.protocol.events.ListenerPriority;
 import com.comphenix.protocol.events.PacketAdapter;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.events.PacketEvent;
+import net.nicc0.heartchanger.hcPlugin;
 import net.nicc0.heartchanger.wrapper.PlayServerLogin;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
 /**
@@ -29,11 +31,16 @@ public class PacketsListener extends PacketAdapter {
     @Override
     public void onPacketSending(PacketEvent event) {
         if(event.getPacketType() == PacketType.Play.Server.LOGIN && event.getPlayer().getHealth() > 0) {
-            PacketContainer packet = event.getPacket();
-            PlayServerLogin playServerLogin = new PlayServerLogin(packet);
-            playServerLogin.setHardcore(true);
+            Player player = event.getPlayer();
+            int type = hcPlugin.getInstance().getType();
+            if(player.hasPermission("heartchanger.hardcore") && type == 0 || type == 2) {
+                PacketContainer packet = event.getPacket();
+                PlayServerLogin playServerLogin = new PlayServerLogin(packet);
+                playServerLogin.setHardcore(true);
+            }
         } else if(event.getPacketType() == PacketType.Play.Client.CLIENT_COMMAND) {
 
         }
+        
     }
 }

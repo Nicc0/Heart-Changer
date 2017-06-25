@@ -3,3 +3,26 @@ version: 1.0.0
 main: net.nicc0.heartchanger.hcPlugin
 author: Nicc0
 depend: [ProtocolLib]
+description: Change heart to hardcore mode without changing game mode.
+permissions:
+    heartchanger.*:
+        description: Gives access to all heart types
+        default: op
+        children:
+            heartchanger.normal: true
+            heartchanger.hardcore: true
+            heartchanger.golden: true
+            heartchanger.dark: true
+            heartchanger.poisoned: true
+    heartchanger.normal:
+        description: Umozliwia graczowi zmiane serc na normalne
+        default: true
+    heartchanger.hardcore:
+        description: Umozliwia graczowi zmiane serc na te z trybu hardcore
+    heartchanger.golden:
+        description: Umozliwia graczowi zmiane serc na zlote
+    heartchanger.dark:
+        description: Umozliwia graczowi zmiane serc na ciemne
+    heartchanger.poisoned:
+        description: Umozliwia graczowi zmiane serc na zatrute
+        

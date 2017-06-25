@@ -11,7 +11,7 @@
 #     5 = Poisoned (Not supported yet)
 # > ---
 # > The default heart type after joining the server.
-Type: 1
+Type: 2
 # > Is the death screen supposed to be displayed?  
 # > I recommend to leave it on "false" because after the death
 # > screen is from hardcore mode.

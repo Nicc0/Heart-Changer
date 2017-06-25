@@ -11,6 +11,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import lombok.Getter;
 import net.nicc0.heartchanger.listener.PlayerDeathListener;
 import net.nicc0.heartchanger.packets.PacketsListener;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -25,7 +26,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class hcPlugin extends JavaPlugin {
     
     private static hcPlugin instance;
-    private static YamlConfiguration config;
+    @Getter private YamlConfiguration config;
+    @Getter private int type = 1;
     
     @Override
     public void onEnable() {
@@ -45,6 +47,8 @@ public class hcPlugin extends JavaPlugin {
         }
         
         config = YamlConfiguration.loadConfiguration(loadResource("config.yml"));
+        
+        type = config.getInt("Type");
         
         ProtocolLibrary.getProtocolManager().addPacketListener(new PacketsListener(this, ListenerPriority.NORMAL, PacketType.Play.Server.RESPAWN, PacketType.Play.Server.LOGIN));
 
@@ -71,10 +75,5 @@ public class hcPlugin extends JavaPlugin {
                 Logger.getLogger(hcPlugin.class.getName()).log(Level.SEVERE, "Problem with copying Plugin resource!", ex);
             }
         } return resourceFile;
-    }
-    
-    @Override
-    public YamlConfiguration getConfig() {
-        return config;
     }
 }
